@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Betsie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Optional iOS Smart App Banner -->
+  <meta name="apple-itunes-app" content="app-id=YOUR_APP_STORE_ID">
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system;
+      text-align: center;
+      padding: 40px 20px;
+      background: #fff;
+    }
+    button {
+      padding: 14px 20px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+      background: #F44336;
+      color: white;
+      width: 100%;
+      max-width: 320px;
+      margin: 10px auto;
+    }
+    a {
+      display: block;
+      margin-top: 16px;
+      color: #0A84FF;
+      text-decoration: none;
+    }
+  </style>
+
+  <script>
+    const parts = window.location.pathname.split('/');
+    const betId = parts[parts.length - 1];
+
+    const appScheme = `betsie://winning/${betId}`;
+    const appStore = "https://apps.apple.com/app/idYOUR_APP_ID";
+
+    function openApp() {
+      window.location.href = appScheme;
+      setTimeout(() => {
+        window.location.href = appStore;
+      }, 1200);
+    }
+
+    // Auto-try open app (Zoom behavior)
+    window.onload = () => {
+      openApp();
+    };
+  </script>
+</head>
+
+<body>
+  <h2>Betsie</h2>
+  <p>Open this bet in the Betsie app</p>
+
+  <button onclick="openApp()">Open in App</button>
+
+  <a href="https://betsie-aasa.vercel.app">
+    Continue on website
+  </a>
+</body>
+</html>
