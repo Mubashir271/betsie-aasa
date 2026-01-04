@@ -5,64 +5,127 @@
   <title>Betsie</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Optional iOS Smart App Banner -->
+  <!-- iOS Smart App Banner (optional but recommended) -->
   <meta name="apple-itunes-app" content="app-id=YOUR_APP_STORE_ID">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: system-ui, -apple-system;
-      text-align: center;
-      padding: 40px 20px;
-      background: #fff;
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui;
+      background: linear-gradient(180deg, #F9FAFB 0%, #EEF1F5 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #111;
     }
-    button {
-      padding: 14px 20px;
-      font-size: 16px;
-      border-radius: 10px;
-      border: none;
-      background: #F44336;
-      color: white;
+
+    .container {
       width: 100%;
-      max-width: 320px;
-      margin: 10px auto;
+      max-width: 360px;
+      background: #FFFFFF;
+      border-radius: 22px;
+      padding: 32px 24px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+      text-align: center;
     }
-    a {
+
+    .logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #FF4D67, #FF7A8A);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      color: #fff;
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin: 8px 0 6px;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 15px;
+      color: #666;
+      margin: 0 0 24px;
+      line-height: 1.4;
+    }
+
+    .primary-btn {
+      width: 100%;
+      padding: 14px 0;
+      border-radius: 14px;
+      border: none;
+      background: #FF4D67;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .primary-btn:active {
+      transform: scale(0.98);
+    }
+
+    .secondary-link {
       display: block;
       margin-top: 16px;
-      color: #0A84FF;
+      font-size: 14px;
+      color: #888;
       text-decoration: none;
+    }
+
+    .secondary-link:hover {
+      text-decoration: underline;
     }
   </style>
 
   <script>
-    const parts = window.location.pathname.split('/');
-    const betId = parts[parts.length - 1];
+    const pathParts = window.location.pathname.split('/');
+    const betId = pathParts[pathParts.length - 1];
 
     const appScheme = `betsie://winning/${betId}`;
-    const appStore = "https://apps.apple.com/app/idYOUR_APP_ID";
+    const appStore = "https://apps.apple.com/app/idYOUR_APP_STORE_ID";
 
     function openApp() {
       window.location.href = appScheme;
+
       setTimeout(() => {
         window.location.href = appStore;
       }, 1200);
     }
 
-    // Auto-try open app (Zoom behavior)
+    // Auto-attempt app open (Zoom / WhatsApp style)
     window.onload = () => {
-      openApp();
+      setTimeout(openApp, 300);
     };
   </script>
 </head>
 
 <body>
-  <h2>Betsie</h2>
-  <p>Open this bet in the Betsie app</p>
+  <div class="container">
+    <div class="logo">B</div>
 
-  <button onclick="openApp()">Open in App</button>
+    <h1>Betsie</h1>
+    <p>Open this bet in the Betsie app to see the result and details.</p>
 
-  <a href="https://betsie-aasa.vercel.app">
-    Continue on website
-  </a>
+    <button class="primary-btn" onclick="openApp()">
+      Open in Betsie
+    </button>
+
+    <a class="secondary-link" href="/">
+      Continue on website
+    </a>
+  </div>
 </body>
 </html>
