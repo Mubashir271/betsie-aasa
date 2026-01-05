@@ -33,11 +33,36 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
 
-    .header-title {
-      font-size: 18px;
-      font-weight: 700;
-      color: #FF4D67;
-    }
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #FF4D67;
+}
+
+.header-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #FF4D67;
+}
+
+.main-title {
+  color: #FF4D67;
+}
 
     .support-link {
       font-size: 14px;
@@ -62,19 +87,23 @@
       margin: auto;
     }
 
-    .logo {
-      width: 72px;
-      height: 72px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, #FF4D67, #FF7A8A);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 16px;
-      color: #fff;
-      font-size: 32px;
-      font-weight: 700;
-    }
+.logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  overflow: hidden; /* 👈 IMPORTANT */
+  margin: 0 auto 16px;
+  background: #FF4D67; /* fallback */
+}
+
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 👈 fills the box */
+  display: block;
+}
+
+
 
     h1 {
       font-size: 22px;
@@ -168,10 +197,17 @@
 
 <body>
   <!-- HEADER -->
-  <div class="header">
-    <div class="header-title">Betsie</div>
-    <a class="support-link" href="/support">Support</a>
+<div class="header">
+  <div class="header-left" onclick="openApp()">
+    <div class="header-logo">
+      <img src="./assets/betsie_logo.jpeg" alt="Betsie Logo" />
+    </div>
+    <span class="header-title">Betsie</span>
   </div>
+
+  <a class="support-link" href="/support">Support</a>
+</div>
+
 
   <!-- CONTENT -->
   <div class="container">
@@ -180,8 +216,8 @@
 </div>
 
 
-    <h1>Betsie</h1>
-    <p>Open this bet in the Betsie app to see the result and details.</p>
+    <h1 class="main-title">Betsie</h1>
+    <p>Ready to get started with Betsie? Download the app.</p>
 
     <button class="primary-btn" onclick="openApp()">
       Open in Betsie
