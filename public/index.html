@@ -5,7 +5,7 @@
   <title>Betsie</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- iOS Smart App Banner (optional but recommended) -->
+  <!-- iOS Smart App Banner -->
   <meta name="apple-itunes-app" content="app-id=YOUR_APP_STORE_ID">
 
   <style>
@@ -19,11 +19,38 @@
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui;
       background: linear-gradient(180deg, #F9FAFB 0%, #EEF1F5 100%);
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
       color: #111;
     }
 
+    /* HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 18px;
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .header-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #FF4D67;
+    }
+
+    .support-link {
+      font-size: 14px;
+      font-weight: 600;
+      color: #FF4D67;
+      text-decoration: none;
+    }
+
+    .support-link:hover {
+      text-decoration: underline;
+    }
+
+    /* MAIN CARD */
     .container {
       width: 100%;
       max-width: 360px;
@@ -32,6 +59,7 @@
       padding: 32px 24px;
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
       text-align: center;
+      margin: auto;
     }
 
     .logo {
@@ -88,6 +116,19 @@
     .secondary-link:hover {
       text-decoration: underline;
     }
+
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      padding: 12px 0 16px;
+      font-size: 13px;
+      color: #888;
+    }
+
+    .footer span {
+      color: #FF4D67;
+      font-weight: 600;
+    }
   </style>
 
   <script>
@@ -95,17 +136,30 @@
     const betId = pathParts[pathParts.length - 1];
 
     const appScheme = `betsie://winning/${betId}`;
-    const appStore = "https://apps.apple.com/app/idYOUR_APP_STORE_ID";
+    const iosStore = "https://apps.apple.com/app/idYOUR_APP_STORE_ID";
+    const androidStore = "https://play.google.com/store/apps/details?id=YOUR_PACKAGE_NAME";
+
+    function isIOS() {
+      return /iPad|iPhone|iPod/.test(navigator.userAgent);
+    }
+
+    function isAndroid() {
+      return /Android/.test(navigator.userAgent);
+    }
 
     function openApp() {
       window.location.href = appScheme;
 
       setTimeout(() => {
-        window.location.href = appStore;
+        if (isIOS()) {
+          window.location.href = iosStore;
+        } else if (isAndroid()) {
+          window.location.href = androidStore;
+        }
       }, 1200);
     }
 
-    // Auto-attempt app open (Zoom / WhatsApp style)
+    // Auto attempt (Zoom / WhatsApp style)
     window.onload = () => {
       setTimeout(openApp, 300);
     };
@@ -113,6 +167,13 @@
 </head>
 
 <body>
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-title">Betsie</div>
+    <a class="support-link" href="/support">Support</a>
+  </div>
+
+  <!-- CONTENT -->
   <div class="container">
     <div class="logo">B</div>
 
@@ -126,6 +187,11 @@
     <a class="secondary-link" href="/">
       Continue on website
     </a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    Developed by <span>Mubashir</span>
   </div>
 </body>
 </html>
