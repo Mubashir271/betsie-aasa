@@ -1,236 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <title>Betsie</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <head>
+    <meta charset="utf-8" />
+    <title>Betsie</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- iOS Smart App Banner -->
-  <meta name="apple-itunes-app" content="app-id=YOUR_APP_STORE_ID">
+    <!-- iOS Smart App Banner -->
+    <meta name="apple-itunes-app" content="app-id=YOUR_APP_STORE_ID" />
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+    <style>
+      * {
+        box-sizing: border-box;
+      }
 
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui;
-      background: linear-gradient(180deg, #F9FAFB 0%, #EEF1F5 100%);
-      display: flex;
-      flex-direction: column;
-      color: #111;
-    }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui;
+        background: linear-gradient(180deg, #f9fafb 0%, #eef1f5 100%);
+        display: flex;
+        flex-direction: column;
+        color: #111;
+      }
 
-    /* HEADER */
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 18px;
-      background: #ffffff;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    }
+      /* HEADER */
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 18px;
+        background: #ffffff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      }
 
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
 
-.header-logo {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  overflow: hidden;
-  background: #FF4D67;
-}
+      .header-logo {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        overflow: hidden;
+        background: #ff4d67;
+      }
 
-.header-logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+      .header-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
 
-.header-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: #FF4D67;
-}
+      .header-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #ff4d67;
+      }
 
-.main-title {
-  color: #FF4D67;
-}
+      .main-title {
+        color: #ff4d67;
+      }
 
-    .support-link {
-      font-size: 14px;
-      font-weight: 600;
-      color: #FF4D67;
-      text-decoration: none;
-    }
+      .support-link {
+        font-size: 14px;
+        font-weight: 600;
+        color: #ff4d67;
+        text-decoration: none;
+      }
 
-    .support-link:hover {
-      text-decoration: underline;
-    }
+      .support-link:hover {
+        text-decoration: underline;
+      }
 
-    /* MAIN CARD */
-    .container {
-      width: 100%;
-      max-width: 360px;
-      background: #FFFFFF;
-      border-radius: 22px;
-      padding: 32px 24px;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
-      text-align: center;
-      margin: auto;
-    }
+      /* MAIN CARD */
+      .container {
+        width: 100%;
+        max-width: 360px;
+        background: #ffffff;
+        border-radius: 22px;
+        padding: 32px 24px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+        text-align: center;
+        margin: auto;
+      }
 
-.logo {
-  width: 72px;
-  height: 72px;
-  border-radius: 18px;
-  overflow: hidden; /* 👈 IMPORTANT */
-  margin: 0 auto 16px;
-  background: #FF4D67; /* fallback */
-}
+      .logo {
+        width: 72px;
+        height: 72px;
+        border-radius: 18px;
+        overflow: hidden; /* 👈 IMPORTANT */
+        margin: 0 auto 16px;
+        background: #ff4d67; /* fallback */
+      }
 
-.logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* 👈 fills the box */
-  display: block;
-}
+      .logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* 👈 fills the box */
+        display: block;
+      }
 
+      h1 {
+        font-size: 22px;
+        margin: 8px 0 6px;
+        font-weight: 700;
+      }
 
+      p {
+        font-size: 15px;
+        color: #666;
+        margin: 0 0 24px;
+        line-height: 1.4;
+      }
 
-    h1 {
-      font-size: 22px;
-      margin: 8px 0 6px;
-      font-weight: 700;
-    }
+      .primary-btn {
+        width: 100%;
+        padding: 14px 0;
+        border-radius: 14px;
+        border: none;
+        background: #ff4d67;
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+      }
 
-    p {
-      font-size: 15px;
-      color: #666;
-      margin: 0 0 24px;
-      line-height: 1.4;
-    }
+      .primary-btn:active {
+        transform: scale(0.98);
+      }
 
-    .primary-btn {
-      width: 100%;
-      padding: 14px 0;
-      border-radius: 14px;
-      border: none;
-      background: #FF4D67;
-      color: #fff;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-    }
+      .secondary-link {
+        display: block;
+        margin-top: 16px;
+        font-size: 14px;
+        color: #888;
+        text-decoration: none;
+      }
 
-    .primary-btn:active {
-      transform: scale(0.98);
-    }
+      .secondary-link:hover {
+        text-decoration: underline;
+      }
 
-    .secondary-link {
-      display: block;
-      margin-top: 16px;
-      font-size: 14px;
-      color: #888;
-      text-decoration: none;
-    }
+      /* FOOTER */
+      .footer {
+        text-align: center;
+        padding: 12px 0 16px;
+        font-size: 13px;
+        color: #888;
+      }
 
-    .secondary-link:hover {
-      text-decoration: underline;
-    }
+      .footer span {
+        color: #ff4d67;
+        font-weight: 600;
+      }
+    </style>
 
-    /* FOOTER */
-    .footer {
-      text-align: center;
-      padding: 12px 0 16px;
-      font-size: 13px;
-      color: #888;
-    }
+    <script>
+      const pathParts = window.location.pathname.split("/");
+      // const betId = pathParts[pathParts.length - 1];
+      const route = pathParts[1]; // 'bet', 'winning', 'resolve', etc.
+      const betId = pathParts[2]; // '839'
 
-    .footer span {
-      color: #FF4D67;
-      font-weight: 600;
-    }
-  </style>
+      // :white_check_mark: Dynamically build the scheme based on actual route
+      const appScheme = `betsie://${route}/${betId}`;
 
-  <script>
-    const pathParts = window.location.pathname.split('/');
-    const betId = pathParts[pathParts.length - 1];
+      // const appScheme = `betsie://winning/${betId}`;
+      const iosStore = "https://apps.apple.com/app/idYOUR_APP_STORE_ID";
+      const androidStore =
+        "https://play.google.com/store/apps/details?id=YOUR_PACKAGE_NAME";
 
-    const appScheme = `betsie://winning/${betId}`;
-    const iosStore = "https://apps.apple.com/app/idYOUR_APP_STORE_ID";
-    const androidStore = "https://play.google.com/store/apps/details?id=YOUR_PACKAGE_NAME";
+      function isIOS() {
+        return /iPad|iPhone|iPod/.test(navigator.userAgent);
+      }
 
-    function isIOS() {
-      return /iPad|iPhone|iPod/.test(navigator.userAgent);
-    }
+      function isAndroid() {
+        return /Android/.test(navigator.userAgent);
+      }
 
-    function isAndroid() {
-      return /Android/.test(navigator.userAgent);
-    }
+      function openApp() {
+        window.location.href = appScheme;
 
-    function openApp() {
-      window.location.href = appScheme;
+        setTimeout(() => {
+          if (isIOS()) {
+            window.location.href = iosStore;
+          } else if (isAndroid()) {
+            window.location.href = androidStore;
+          }
+        }, 1200);
+      }
 
-      setTimeout(() => {
-        if (isIOS()) {
-          window.location.href = iosStore;
-        } else if (isAndroid()) {
-          window.location.href = androidStore;
-        }
-      }, 1200);
-    }
+      // Auto attempt (Zoom / WhatsApp style)
+      window.onload = () => {
+        setTimeout(openApp, 300);
+      };
+    </script>
+  </head>
 
-    // Auto attempt (Zoom / WhatsApp style)
-    window.onload = () => {
-      setTimeout(openApp, 300);
-    };
-  </script>
-</head>
+  <body>
+    <!-- HEADER -->
+    <div class="header">
+      <div class="header-left" onclick="openApp()">
+        <div class="header-logo">
+          <img src="./assets/betsie_logo.jpeg" alt="Betsie Logo" />
+        </div>
+        <span class="header-title">Betsie</span>
+      </div>
 
-<body>
-  <!-- HEADER -->
-<div class="header">
-  <div class="header-left" onclick="openApp()">
-    <div class="header-logo">
-      <img src="./assets/betsie_logo.jpeg" alt="Betsie Logo" />
+      <a class="support-link" href="/support">Support</a>
     </div>
-    <span class="header-title">Betsie</span>
-  </div>
 
-  <a class="support-link" href="/support">Support</a>
-</div>
+    <!-- CONTENT -->
+    <div class="container">
+      <div class="logo">
+        <img src="./assets/betsie_logo.jpeg" alt="Betsie Logo" />
+      </div>
 
+      <h1 class="main-title">Betsie</h1>
+      <p>Ready to get started with Betsie? Download the app.</p>
 
-  <!-- CONTENT -->
-  <div class="container">
-    <div class="logo">
-  <img src="./assets/betsie_logo.jpeg" alt="Betsie Logo" />
-</div>
+      <button class="primary-btn" onclick="openApp()">Open in Betsie</button>
 
+      <a class="secondary-link" href="/"> Continue on website </a>
+    </div>
 
-    <h1 class="main-title">Betsie</h1>
-    <p>Ready to get started with Betsie? Download the app.</p>
-
-    <button class="primary-btn" onclick="openApp()">
-      Open in Betsie
-    </button>
-
-    <a class="secondary-link" href="/">
-      Continue on website
-    </a>
-  </div>
-
-  <!-- FOOTER -->
-  <div class="footer">
-    Developed by <span>Mubashir</span>
-  </div>
-</body>
+    <!-- FOOTER -->
+    <div class="footer">Developed by <span>Mubashir</span></div>
+  </body>
 </html>
